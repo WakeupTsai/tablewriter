@@ -593,7 +593,10 @@ func (t *Table) fillAlignment(num int) {
 
 func (t *Table) printRow(columns [][]string, rowIdx int) {
 	// Get Maximum Height
-	max := t.rs[rowIdx]
+	// max := t.rs[rowIdx]
+
+	// Do not allow multiple line for one item
+	max := 1
 	total := len(columns)
 
 	// TODO Fix uneven col size
@@ -623,7 +626,7 @@ func (t *Table) printRow(columns [][]string, rowIdx int) {
 		}
 	}
 	//fmt.Println(max, "\n")
-	for x := 0; x < max; x++ {
+	for x := 0; x < 1; x++ {
 		for y := 0; y < total; y++ {
 
 			// Check if border is set
